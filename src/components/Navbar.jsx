@@ -1,10 +1,31 @@
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
 import { navLinks } from "../../constants"
 
 const Navbar = () => {
+  useGSAP(() =>{
+    const navTween = gsap.timeline({
+      scrollTrigger:{
+        trigger: 'nav',
+        start: 'bottom top',
+      }
+    });
+
+    navTween.fromTo(
+      'nav',
+      {backgroundColor: 'transparent'},
+      {backgroundColor: '#00000050',
+       backgroundFilter: 'blur(10px)',
+       duration: 1,
+       ease: 'power.inOut'
+  })
+  })
   return (
     <nav>
-      <a href="#home" className="flex items-center gap-2">
-        <p className="m-2 text-5xl text-amber-200">Bee Pure</p>
+      <div>
+        <a href="#home" className="flex items-center gap-2">
+        <img className="size-10" src="/images/fav.png" alt="logo" />
+        <p>Velvet Drop</p>
       </a>
       <ul>
         {navLinks.map((link) => (
@@ -13,6 +34,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      </div>
     </nav>
   )
 }
