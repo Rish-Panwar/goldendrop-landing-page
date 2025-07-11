@@ -9,7 +9,7 @@ const Navbar = () => {
         trigger: 'nav',
         start: 'bottom top',
       }
-    });
+    })
 
     navTween.fromTo(
       'nav',
@@ -17,14 +17,14 @@ const Navbar = () => {
       {backgroundColor: '#00000050',
        backgroundFilter: 'blur(10px)',
        duration: 1,
-       ease: 'power.inOut'
-  })
+       ease: 'power1.inOut'}
+  )
   })
   return (
     <nav>
       <div>
         <a href="#home" className="flex items-center gap-2">
-        <img className="size-10" src="/images/fav.png" alt="logo" />
+        <img  src="/images/logo.png" alt="logo"/> 
         <p>Velvet Drop</p>
       </a>
       <ul>
