@@ -43,7 +43,7 @@ const Hero = () => {
 
     const startValue = isMobile ? 'top 50%' : 'center 60%'
 
-    const endValue = isMobile ? '120% top' : 'bottom top'
+    const endValue = isMobile ? '120% top' : 'bottom top '
 
     // Video animation timeline
     videoTimelineRef.current = gsap.timeline({
@@ -58,6 +58,7 @@ const Hero = () => {
     videoRef.current.onloadedmetadata = () => {
       videoTimelineRef.current.to(videoRef.current, {
         currentTime: videoRef.current.duration,
+        ease: 'none',
       });
     }
 
